@@ -15,7 +15,7 @@ const apiBase = import.meta.env.VITE_API_URL ;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`${apiBase}/a/api/posts/${id}`, post);
+    await axios.put(`${apiBase}/api/posts/${id}`, post);
     navigate("/");
   };
 
