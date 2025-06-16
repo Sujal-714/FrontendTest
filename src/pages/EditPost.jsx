@@ -6,16 +6,16 @@ function EditPost() {
   const { id } = useParams();
   const [post, setPost] = useState({ title: "", content: "" });
   const navigate = useNavigate();
-
+const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/posts/${id}`).then((res) => {
+    axios.get(`${apiBase}/api/posts/${id}`).then((res) => {
       setPost(res.data);
     });
   }, [id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3000/api/posts/${id}`, post);
+    await axios.put(`${apiBase}/a/api/posts/${id}`, post);
     navigate("/");
   };
 

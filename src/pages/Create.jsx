@@ -6,10 +6,11 @@ function CreatePost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
+    const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3000/api/posts", { title, content });
+    await axios.post(`${apiBase}/api/posts`, { title, content });
     navigate("/");
   };
 

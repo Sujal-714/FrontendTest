@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 function Home() {
   const [posts, setPosts] = useState([]);
 
+    // Read base API URL from env variable
+  const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:3000/api/posts");
+    const res = await axios.get(`${apiBase}/api/posts`);
     setPosts(res.data);
   };
 
   const deletePost = async (id) => {
-    await axios.delete(`http://localhost:3000/api/posts/${id}`);
+    await axios.delete(`${apiBase}/api/posts/${id}`);
     fetchPosts(); // refresh after delete
   };
 
