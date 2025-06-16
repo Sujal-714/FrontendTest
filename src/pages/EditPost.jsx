@@ -6,7 +6,7 @@ function EditPost() {
   const { id } = useParams();
   const [post, setPost] = useState({ title: "", content: "" });
   const navigate = useNavigate();
-const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const apiBase = import.meta.env.VITE_API_URL ;
   useEffect(() => {
     axios.get(`${apiBase}/api/posts/${id}`).then((res) => {
       setPost(res.data);

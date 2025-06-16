@@ -6,7 +6,7 @@ function CreatePost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
-    const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
+    const apiBase = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

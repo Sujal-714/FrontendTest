@@ -6,7 +6,7 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
     // Read base API URL from env variable
-  const apiBase = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const apiBase = import.meta.env.VITE_API_URL ;
 
   const fetchPosts = async () => {
     const res = await axios.get(`${apiBase}/api/posts`);
