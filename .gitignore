@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build
+build/
+
+# Env files
+.env
+.env.*.local
+
+# Vercel
+.vercel/
+
+# Logs & misc
+*.log
+.DS_Store
