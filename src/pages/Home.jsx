@@ -7,6 +7,7 @@ function Home() {
 
     // Read base API URL from env variable
   const apiBase = import.meta.env.VITE_API_URL ;
+console.log("API BASE:", import.meta.env.VITE_API_URL);
 
   const fetchPosts = async () => {
     const res = await axios.get(`${apiBase}/api/posts`);
